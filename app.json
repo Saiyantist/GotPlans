@@ -25,6 +25,12 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "22601e99-9216-48bb-bc29-b2f1ec3f9d9e"
+      }
+    },
+    "owner": "saiyantist"
   }
 }
