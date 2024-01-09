@@ -1,6 +1,6 @@
 import { Dimensions, StyleSheet, StatusBar} from "react-native";
 
-import { colors } from "../styles/appColors";
+import { colors } from "../appColors";
 
 export const width = Dimensions.get('window').width;
 export const height = Dimensions.get('window').height;
@@ -40,8 +40,7 @@ export const styles = StyleSheet.create({
 
     formInputArea: {
         flex: 1,
-        marginTop: 40,
-        // justifyContent: 'center',
+        justifyContent: 'center',
         // borderWidth: 1, borderColor: 'black',
         
     },
@@ -55,7 +54,7 @@ export const styles = StyleSheet.create({
     },
 
     submit: {
-        flex: 1.3,
+        flex: 1,
         // marginVertical: 15,
         justifyContent: 'center',
         // borderWidth: 1, borderColor: 'red',
@@ -100,23 +99,6 @@ export const styles = StyleSheet.create({
         borderBottomWidth: 1,
         borderColor: colors.primary,
     },
-
-    /** 
-    *  Failed OTP input, box type
-    */
-    // otpBoxesContainer: {
-    //     flexDirection: 'row'
-    // },
-    // otpBox: {
-    //     padding: 10,
-    //     marginRight: 10,
-    //     borderWidth: 1,
-    //     borderColor: 'grey',
-    //     height: 45,
-    //     width: 45,
-    //     textAlign: 'center',
-    //     backgroundColor: colors.secondary
-    // }
 
 
 

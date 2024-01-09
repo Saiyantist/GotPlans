@@ -7,7 +7,7 @@ import { colors } from '../../styles/appColors';
 import { data } from '../../components/session';
 
 
-export default class VerifyOTP extends Component {
+export default class VerifyEmail extends Component {
     
     state = data
 
@@ -31,7 +31,7 @@ export default class VerifyOTP extends Component {
 
                     {/* Header */}
                         <View style={[styles.sectionTop, styles.formContent]}>
-                            <Text style={styles.h1}>Verify your Login</Text>
+                            <Text style={styles.h1}>Email Verification</Text>
                         </View>
                         
                     {/* Form Content */}
@@ -59,26 +59,17 @@ export default class VerifyOTP extends Component {
                                 
                             </View>
 
-                        {/* Log In Button */}
+                        {/* Proceed Registration Button */}
                             <View style={styles.submit}>
                                 <TouchableOpacity style={styles.submitButton}
                                     onPress={() => this.props.navigation.navigate('HomeScreens')}>
                                     {/* 
                                         Validation stuff up there inside arrowFunc for back-end.
                                     */}
-                                    <Text style={[styles.h3, {fontWeight: 'bold', color: colors.white }]}>Login</Text>
+                                    <Text style={[styles.h3, {fontWeight: 'bold', color: colors.white }]}>Proceed</Text>
                                 </TouchableOpacity>
                             </View>
                         </View>
-
-                        {/* Form Footer - Removed, unnecessary */}
-                        {/* <View style={[styles.sectionBottom, styles.formContent]}>
-                            <Text style={[styles.h4, {flex: 1, paddingTop: 20}]}>Don't have an account?</Text>
-                            <TouchableHighlight style={[styles.textLink, {flex: 1, marginBottom: 40}]}>
-                                <Text style={[styles.h4, {flex: 1, fontWeight: 'bold', color: colors.primary}]}>Create account</Text>
-                            </TouchableHighlight>
-                        </View>        */}
-
                     </View>
 
 

@@ -2,9 +2,8 @@ import { Component} from 'react';
 import { Platform, View, KeyboardAvoidingView, ScrollView, StatusBar, StyleSheet, Text, TextInput, TouchableHighlight, Image, TouchableOpacity, TouchableWithoutFeedback, Keyboard, } from 'react-native';
 import { SelectList } from 'react_native_simple_dropdown_select_list';
 
-import { styles } from '../../styles/stylesSignUp';
+import { styles } from '../../styles/auth/stylesSignUp';
 import { colors } from '../../styles/appColors';
-import { styles as stylez } from '../../styles/stylesLogin';
 
 
 import { data } from '../../components/session';
@@ -42,19 +41,13 @@ export default class Login extends Component {
                  * type - 'organizer' or 'customer'  DROPDOWN    
                  */}
 
-                {/* 
-                
-                <View></View> 
-
-                */}
-
-
                 <ScrollView style={styles.scrollFix}>
 
                     <View style={styles.container}>
 
                         <View style={styles.formContainer}>
 
+                            {/* Header */}
                                 <View style={[styles.sectionTop, styles.formContent]}>
                                     <Text style={styles.h1}>Create Account</Text>
                                 </View>
@@ -62,12 +55,13 @@ export default class Login extends Component {
                                 <View style={[styles.sectionForm, styles.formContent]}>
 
                                     {/** 
-                                     * For the expansion of collecting info in creating an account,
+                                     * For the expansion of collecting info in creating an account:
                                      * 
-                                     * will use
-                                     *      <ScrollView></ScrollView>                                  */}
+                                     * use <ScrollView></ScrollView>
+                                     * 
+                                     */}
 
-
+                                {/* First Name */}
                                     <View style={styles.formInputArea}>
                                         <Text style={[styles.h4,{textAlign: 'left'}]}>First Name</Text>
 
@@ -76,6 +70,7 @@ export default class Login extends Component {
                                         <TextInput  style={styles.textInput} placeholder='Enter First Name'/>
                                     </View>
 
+                                {/* Last Name */}
                                     <View style={styles.formInputArea}>
                                         <Text style={[styles.h4,{textAlign: 'left'}]}>Last Name</Text>
 
@@ -84,6 +79,7 @@ export default class Login extends Component {
                                         <TextInput  style={styles.textInput} placeholder='Enter Last Name'/>
                                     </View>
 
+                                {/* Email Address */}
                                     <View style={styles.formInputArea}>
                                         <Text style={[styles.h4,{textAlign: 'left'}]}>Email Address</Text>
 
@@ -92,6 +88,7 @@ export default class Login extends Component {
                                         <TextInput  style={styles.textInput} placeholder='Enter Email Address' keyboardType='email-address'/>
                                     </View>
 
+                                {/* Role Dropdown Picker */}
                                     <View style={[styles.formInputArea, {flex: 1.2}]}>
                                         <Text style={[styles.h4,{textAlign: 'left'}]}>Are you a Client or an Organizer </Text>
                                         <View style={styles.dropdown}>
@@ -111,8 +108,6 @@ export default class Login extends Component {
                                         </View> 
                                     </View>
 
-
-
                                     {/**
                                     * onPress -> will validate the email address
                                     *         -> will check if firstname and lastname are not ''
@@ -120,8 +115,9 @@ export default class Login extends Component {
                                     * 
                                     *               if all true
                                     *                   -> will setState the({ email: text}) 
-                                    *                   -> will proceed to VerifyOTP.js screen         */} 
-                                    <TouchableOpacity style={styles.submitButton}>
+                                    *                   -> will proceed to VerifyEmail.js screen         */} 
+                                    <TouchableOpacity style={styles.submitButton}
+                                        onPress={() => this.props.navigation.navigate('Email Verification')}>
                                         <Text style={[styles.h3, {fontWeight: 'bold', color: colors.white }]}>Register</Text>
                                     </TouchableOpacity>
                                 </View> 
@@ -134,7 +130,10 @@ export default class Login extends Component {
                                     {/**
                                     * onPress -> will proceed to LogIn.js screen         */}
                                     <TouchableHighlight style={[styles.textLink, {flex: 1, marginBottom: 40}]}>
-                                        <Text style={[styles.h4, {flex: 1, fontWeight: 'bold', color: colors.primary}]}>Login here</Text>
+                                        <Text style={[styles.h4, {flex: 1, fontWeight: 'bold', color: colors.primary}]}
+                                        onPress={() => this.props.navigation.navigate('Login')}>
+                                            Login here
+                                    </Text>
                                     </TouchableHighlight>
                                 </View>
 
